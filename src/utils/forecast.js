@@ -8,7 +8,7 @@ const forecast = (lat, lng, callback) => {
         } else if (body.error) {
             callback('Unable to find the weather detail for the location.', undefined);
         } else {
-            callback(undefined, body.daily.data[0].summary + ', Its ' + body.currently.temperature + ' degree out and ' + body.currently.precipProbability + '% channce to rain');
+            callback(undefined, body.daily.data[0].summary + ', It is currently ' + body.currently.temperature + ' degree out, This high today is '+ body.daily.data[0].temperatureHigh + ' and a low of '+ body.daily.data[0].temperatureLow +'. Chance of raining is ' + body.currently.precipProbability + '% chance to rain');
         }
     })
 };
